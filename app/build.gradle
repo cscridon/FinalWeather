@@ -1,0 +1,105 @@
+apply plugin: 'com.android.application'
+apply plugin: 'kotlin-android'
+apply plugin: 'kotlin-android-extensions'
+apply plugin: 'kotlin-kapt'
+
+
+android {
+    compileSdkVersion 27
+    defaultConfig {
+        applicationId "com.csc.finalweather"
+        minSdkVersion 21 //set minimum supported Android to Lollipop 5.0
+        targetSdkVersion 27
+        versionCode 1
+        versionName "1.0"
+        testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
+    }
+
+
+    buildTypes {
+
+        def BASE_URL = "https://api.darksky.net/"
+        def API_KEY = "35e9144b9f1c68ecf4d3be6fafc6b9d2"
+
+        debug {
+            buildConfigField "String", "API_BASE_URL", "\"$BASE_URL\""  //Darksky API Url
+            buildConfigField "String", "API_KEY", "\"$API_KEY\""  //API KEY
+            buildConfigField "boolean", "ENABLE_OBJECTBOX_DEBUG", "true" //set true to debug DB in Chrome Browser
+            minifyEnabled false
+        }
+
+        release {
+            buildConfigField "String", "API_BASE_URL", "\"$BASE_URL\""  //Darksky API Url
+            buildConfigField "String", "API_KEY", "\"$API_KEY\""  //API KEY
+            buildConfigField "boolean", "ENABLE_OBJECTBOX_DEBUG", "false" //set true to debug DB in Chrome Browser
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+        }
+
+    }
+
+    // Configure only for each module that uses Java 8
+    // language features (either in its source code or
+    // through dependencies).
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_1_8
+        targetCompatibility JavaVersion.VERSION_1_8
+    }
+}
+
+dependencies {
+    //Include any .jar artifact from libs directory to the compile configuration
+    implementation fileTree(dir: 'libs', include: ['*.jar'])
+
+    //Kotlin standard library
+    implementation "org.jetbrains.kotlin:kotlin-stdlib-jdk7:$kotlin_version"
+
+    //Constraint layout library
+    implementation "com.android.support.constraint:constraint-layout:$constraint_lib_version"
+
+    //Kotlin coroutines library
+    implementation "org.jetbrains.kotlinx:kotlinx-coroutines-core:$kotlin_coroutines_version"
+
+    //Anko Kotlin library
+    implementation "org.jetbrains.anko:anko:$anko_version"
+
+    //Card View library
+    implementation "com.android.support:cardview-v7:$google_support_version"
+
+    //Google support libraries
+    implementation "com.android.support:appcompat-v7:$google_support_version"
+    implementation "com.android.support:design:$google_support_version"
+    implementation "com.android.support:support-vector-drawable:$google_support_version"
+
+    //RxBus (Reactive Event Bus)
+    implementation "com.github.anadea:rxbus:$rx_bus_version"
+
+    //Retrofit 2 (Http Client) library
+    implementation "com.squareup.retrofit2:retrofit:$retrofit_version"
+    implementation "com.squareup.retrofit2:adapter-rxjava2:$retrofit_version"
+
+    //Support for GSON
+    implementation "com.squareup.retrofit2:converter-gson:$retrofit_version"
+    implementation "com.google.code.gson:gson:$gson_version"
+
+    //Dagger2
+    kapt "com.google.dagger:dagger-compiler:$dagger_version"
+    implementation "com.google.dagger:dagger-android:$dagger_version"
+    kapt "com.google.dagger:dagger-android-processor:$dagger_version"
+    implementation "com.google.dagger:dagger-android-support:$dagger_version"
+
+    // Make sure that you apply the “io.objectbox” plugin after the dependencies block
+    debugImplementation "io.objectbox:objectbox-android-objectbrowser:$objectboxVersion"
+    releaseImplementation "io.objectbox:objectbox-android:$objectboxVersion"
+
+    //GPS Location library
+    implementation "com.yayandroid:LocationManager:$gps_tracker_version"
+
+    //Test related support libs
+    testImplementation 'junit:junit:4.12'
+    androidTestImplementation 'com.android.support.test:runner:1.0.2'
+    androidTestImplementation 'com.android.support.test.espresso:espresso-core:3.0.2'
+}
+
+//this should be applied after dependecies
+apply plugin: 'io.objectbox'

@@ -1,0 +1,25 @@
+<resources>
+    <string name="app_name">FinalWeather</string>
+    <!-- Splash resources -->
+    <string name="splash_loading_text">Loading..</string>
+    <string name="splash_network_text">Checking network..</string>
+    <string name="splash_location_text">"Detecting your location..</string>
+
+    <!-- Permissions resources -->
+    <string name="permission_dialog_title_text">Permission needed!</string>
+    <string name="permission_enable_gps_text">Do you want to enable GPS?</string>
+
+    <!-- Error resources -->
+    <string name="error_title_text">Error!</string>
+    <string name="error_timeout">Couldn\'t get location, and timeout!</string>
+    <string name="error_permission_denied">Couldn\'t get location, because user didn\'t give permission!</string>
+    <string name="error_network_not_available">Couldn\'t get location, because GPS is not enabled!</string>
+    <string name="error_play_services_not_available">Couldn\'t get location, because Google Play Services not available!</string>
+    <string name="error_play_services_connection_failed">Couldn\'t get location, because Google Play Services connection failed!</string>
+    <string name="error_play_services_settings_dialog">Couldn\'t display settingsApi dialog!</string>
+    <string name="error_play_services_settings_denied">Couldn\'t get location, because user didn\'t activate providers via settingsApi!</string>
+    <string name="error_view_detached">Couldn\'t get location, because in the process view was detached!</string>
+    <string name="error_not_required">Couldn\'t get location, because view wasn\'t sufficient enough to fulfill given configuration!</string>
+    <string name="error_unknow">Ops! Something went wrong!</string>
+
+</resources>

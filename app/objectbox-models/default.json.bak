@@ -1,0 +1,111 @@
+{
+  "_note1": "KEEP THIS FILE! Check it into a version control system (VCS) like git.",
+  "_note2": "ObjectBox manages crucial IDs for your object model. See docs for details.",
+  "_note3": "If you have VCS merge conflicts, you must resolve them according to ObjectBox docs.",
+  "entities": [
+    {
+      "id": "2:1954392930497024887",
+      "lastPropertyId": "8:1840785587406861847",
+      "name": "CurrentWeatherTableDbModel",
+      "properties": [
+        {
+          "id": "1:1361120690925214484",
+          "name": "id"
+        },
+        {
+          "id": "2:9191269259622628496",
+          "name": "summary"
+        },
+        {
+          "id": "3:6094101228869628961",
+          "name": "icon"
+        },
+        {
+          "id": "4:5671634154539862937",
+          "name": "temperature"
+        },
+        {
+          "id": "5:2407994964855850300",
+          "name": "apparentTemperature"
+        },
+        {
+          "id": "6:775295401277121306",
+          "name": "locationName"
+        },
+        {
+          "id": "7:6540977498780966493",
+          "name": "humidity"
+        },
+        {
+          "id": "8:1840785587406861847",
+          "name": "windSpeed"
+        }
+      ],
+      "relations": []
+    },
+    {
+      "id": "3:8901157342062219924",
+      "lastPropertyId": "12:8117976744440150534",
+      "name": "DailyWeatherTableDbModel",
+      "properties": [
+        {
+          "id": "1:9066944412809679363",
+          "name": "id"
+        },
+        {
+          "id": "5:6896236310794731708",
+          "name": "summary"
+        },
+        {
+          "id": "6:5009314950170688951",
+          "name": "icon"
+        },
+        {
+          "id": "7:8484456330026685884",
+          "name": "temperatureMin"
+        },
+        {
+          "id": "8:7129667979669554797",
+          "name": "temperatureMax"
+        },
+        {
+          "id": "9:172792860442465925",
+          "name": "humidity"
+        },
+        {
+          "id": "10:7815946538554201116",
+          "name": "pressure"
+        },
+        {
+          "id": "11:2061400353662360210",
+          "name": "windSpeed"
+        },
+        {
+          "id": "12:8117976744440150534",
+          "name": "formattedTime"
+        }
+      ],
+      "relations": []
+    }
+  ],
+  "lastEntityId": "3:8901157342062219924",
+  "lastIndexId": "0:0",
+  "lastRelationId": "0:0",
+  "lastSequenceId": "0:0",
+  "modelVersion": 4,
+  "modelVersionParserMinimum": 4,
+  "retiredEntityUids": [
+    9082052856020265979
+  ],
+  "retiredIndexUids": [],
+  "retiredPropertyUids": [
+    1257480505565665824,
+    3229200095349646019,
+    1412270327634132728,
+    1853322275544613784,
+    2926124321153922700,
+    6335456684237767782
+  ],
+  "retiredRelationUids": [],
+  "version": 1
+}
